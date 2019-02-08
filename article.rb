@@ -16,7 +16,7 @@ class Article < MyBlog
     # add the article to blogs
     def add_to_blog
         @@blogs[@title] = [@body, @comments]
-        puts "Article Added successfully"
+        return "Article Added successfully"
     end
 
     # add a comment to the article

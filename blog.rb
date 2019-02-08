@@ -12,10 +12,10 @@ class MyBlog
     # view all the articles
     def view_all
             if @@blogs.empty?
-                puts "No articles yet "
+                return "No articles yet "
             else
                 @@blogs.each do |name, article|
-                puts "#{name} : #{article}"
+                return "#{name} : #{article}"
             end
         end
     end
