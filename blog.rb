@@ -25,7 +25,11 @@ class MyBlog
         puts "#{name}" << blogs[name]
     end
 
-    # delete a single post
+    # delete a single post and all associated comments
+    def delete_article(title_of_post_to_delete)
+        # loops through the blog hash to delete
+        @@blogs.delete_if{|title, body| title == title_of_post_to_delete }
+    end
 
 
 end
