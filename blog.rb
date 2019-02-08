@@ -1,21 +1,31 @@
 #the blog class
 
-module MyBlogs
+class MyBlog
     #articles inside the blog
-    BLOGS = Hash.new("That blog does not seem to exist")
+    @@blogs = Hash.new("That blog does not seem to exist")
+    #Start a blog
+    def initialize(name,password)
+        @name = name
+        @password = password
+    end
 
-
-    # view all the blogs
+    # view all the articles
     def view_all
-        blogs.each do |name, article|
-            puts "#{name} : #{article}"
+            if @@blogs.empty?
+                puts "No articles yet "
+            else
+                @@blogs.each do |name, article|
+                puts "#{name} : #{article}"
+            end
         end
     end
 
-    # view one blog
+    # view one article
     def view_one(name)
         puts "#{name}" << blogs[name]
     end
+
+    # delete a single post
 
 
 end
