@@ -2,6 +2,9 @@
 require_relative 'blog.rb'
 # single blog class
 class Article < MyBlog
+    attr_accessor :title, :body
+    # attr_accessor :body
+
     
     # create an article
     def initialize(title, body)
@@ -34,6 +37,7 @@ end
 
 my_blog = MyBlog.new("Melvin", 12345)
 article = Article.new("frist title","first article body")
+article.title = "New first title"
 article.add_to_blog
 article.add_comment("this is a comment to first post", "Melvin")
 article2 = Article.new("Second title", "My second body")
@@ -41,4 +45,4 @@ article2.add_to_blog
 article2.add_comment("this is a comment to second post","Atieno")
 article2.add_comment("this is a secon to second post","Atieno2")
 # my_blog.delete_article("Second title")
-my_blog.view_one("frist title")
+my_blog.view_one("New first title")
