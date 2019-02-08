@@ -21,8 +21,12 @@ class MyBlog
     end
 
     # view one article
-    def view_one(name)
-        puts "#{name}" << blogs[name]
+    def view_one(title_to_show)
+        @@blogs.each do |title, body|
+            if title == title_to_show
+                puts "#{title_to_show} : #{body}"
+            end
+        end
     end
 
     # delete a single post and all associated comments
