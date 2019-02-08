@@ -11,7 +11,7 @@ describe MyBlog do
 
         it "should return 'No articles yet when there are no blogs'" do
             new_blog = MyBlog.new("Atieno", 12345)
-            expect(new_blog.view_all).to be == "No articles yet "
+            expect(new_blog.view_all).to be_a(String)
         end
 
     end

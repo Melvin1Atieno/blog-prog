@@ -24,7 +24,7 @@ class MyBlog
     def view_one(title_to_show)
         @@blogs.each do |title, body|
             if title == title_to_show
-                puts "#{title_to_show} : #{body}"
+               return "#{title_to_show} : #{body}"
             end
         end
     end

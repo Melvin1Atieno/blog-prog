@@ -23,7 +23,7 @@ class Article < MyBlog
     def add_comment(comment,commenter)
         # add comment to post
         @comments << {commenter => comment}
-        puts "comment added successfully"
+        return "comment added successfully"
     end
 
     # delete comment
@@ -31,7 +31,10 @@ class Article < MyBlog
         #finds comment equal to the comment to delete and deletes it
         @comments.each {|comment|
                         comment.delete_if {|commenter, comment| comment == comment_to_delete}}
+
+      return "comment successfully deleted"                  
     end
 
 end
+
 
