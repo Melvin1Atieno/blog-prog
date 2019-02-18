@@ -5,6 +5,7 @@ It allows basic CRUD methods on the articles within a blog
 
 ## HOW
  - install `ruby`
+ - run `ruby article.rb`
 ### BLOG
 
 This is how the methods work
