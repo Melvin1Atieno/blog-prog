@@ -4,65 +4,63 @@ A simple program for creating articles and comments in a blog
 It allows basic CRUD methods on the articles within a blog
 
 ## HOW
- - install `ruby`
- - run `ruby article.rb`
+
+- install `ruby`
+- run `ruby main.rb`
+  
 ### BLOG
 
 This is how the methods work
 
 #### To create a blog
 
-In the `article.rb`;
+In the `main.rb`;
 
 ```ruby
-new_blog = MyBlog.new(username, password)
+new_blog = Blog.new(name: "cool blog name')
+
+```
+
+#### To edit blog name
+
+```ruby
+new_blog.name = "My cooler new name"
+```
+
+#### To create article in blog
+
+```ruby
+article_1 = new_blog.new_article(title: "cool blog title", body: "cool blog text")
 ```
 
 #### To view articles in blog
 
 ```ruby
-new_blog.view_all
+   new_blog.articles
 ```
 
-#### To view one article in blog
+#### To edit blog title
 
 ```ruby
-new_blog.view_one(blog_title)
+article_1.title = "new cooler title"
 ```
 
-### ARTICLES
 
-In the `article.rb`;
-
-#### To create new article
+#### To comment on artitcle
 
 ```ruby
-new_article = Article.new(title, body)
+comment_to_article_1 = article_1.new_comment(body: "first comment")
 ```
 
-#### To add new article to blog
+#### To edit comment
 
 ```ruby
-new_article.add_to_blog
-```
-
-#### To add a comment to an article
-
-```ruby
-new_article.add_comment(comment_body, comment_name)
-```
-
-#### To delete a comment
-```ruby
-new_article.delete_comment(comment_to_delete)
+comment_to_article_1.body = "new comment"
 ```
 
 ## TEST
 
-- cd into project directory
-- `gem install  rspec`
-- Run `rspec`
+Program uses minitest.
 
-## RUN PROGRAM
 
-- RUN `ruby article.rb`
+- Run `ruby main.rb`
