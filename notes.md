@@ -136,7 +136,40 @@ NB:**In ruby a class can inherit only from a single other class**
 To indicate inheritance in ruby,
 
 ```ruby
-  class Foo < Bar
+  class Animal < Cow
 ```
 
-This basically means, create class `Foo` which inherits from class `Bar`
+This basically means, create class `Animal` which inherits from class `Cow`.
+Inheritance allows also allows lower classes to override or alter higher classe's methods
+
+## Composition
+
+Composition refers to the use of other classes.
+Having an object within a lower class that is an instance of a higher class.
+
+With the examples `Animal` and `Cow` used above. This is an example of what composition might look like.
+
+```ruby
+class Animal
+
+    def initialize(legs)
+        @legs = legs
+    end
+
+    def walk(legs)
+        puts "This animal is using#{legs} to walk"
+    end
+end
+
+class Cow
+    def initialize(sex)
+        @sex = sex
+    end
+
+    def babies(size)
+        new_baby = Animal.new(4)
+        return new_baby.walk
+    end
+end
+```
+Composition has been used in thi program.
