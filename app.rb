@@ -43,10 +43,8 @@ class Blog
     attr_reader :articles, :id
     #Start a blog
     def initialize(name:)
+        raise ArgumentError.new('nil not allowed')if name.nil? 
         @name = name
-        if name.nil? or @name.size == 0  
-            raise ArgumentError.new('nil not allowed')  
-        end
         @id = @@id += 1
         @@blogs.push(@name)
         @articles = Array.new
