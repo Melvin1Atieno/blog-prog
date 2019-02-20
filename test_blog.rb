@@ -9,6 +9,17 @@
 # it should run the test and pass
 require "minitest/autorun"
 
+# build a blog console application and make the tests pass
+# Have one file for the app (app.rb), 
+# one file fo the runner (main.rb) 
+# and this test file (test_blog.rb).
+# when you run 
+
+# ruby ./main.rb
+
+# it should run the test and pass
+require "minitest/autorun"
+
 class TestBlogApp < Minitest::Test
   def setup
     @blog = Blog.new(name: 'The best Blog')
