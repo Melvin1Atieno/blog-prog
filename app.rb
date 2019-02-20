@@ -26,7 +26,7 @@ class Article
         @comments = Array.new
     end
 
-    def new_comment(body: nil)
+    def new_comment(body:)
         comment = Comment.new(body)
         @comments.push(comment)
         return comment
@@ -42,15 +42,17 @@ class Blog
     attr_accessor :name
     attr_reader :articles, :id
     #Start a blog
-    def initialize(name)
-        #increase id
+    def initialize(name:)
         @name = name
+        if name.nil? or @name.size == 0  
+            raise ArgumentError.new('nil not allowed')  
+        end
         @id = @@id += 1
-        @@blogs.push(name)
+        @@blogs.push(@name)
         @articles = Array.new
     end
 
-    def new_article(title: nil, body: nil)
+    def new_article(title: , body:)
         article = Article.new(title, body)
         @articles.push(article)
         return article
